@@ -6,17 +6,20 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-@WebServlet(name = "HelloWorldServlet", urlPatterns = "/hello")
-public class HelloWorldServlet extends HttpServlet {
-    @Override
+@WebServlet(name = "CounterServlet",urlPatterns = "/count")
+public class CounterServlet extends HttpServlet {
+    private int count;
     protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+        String reset = req.getParameter("reset");
         res.setContentType("text/html");
-        String name = req.getParameter("name");
         PrintWriter out = res.getWriter();
-        if (name != null) {
-            out.println("<h1>Hello, " + name + "!</h1>");;
+        if(reset != null){
+            count = 0;
+            res.sendRedirect("/count");
         } else {
-            out.println("<h1>Hello World!</h1>");
+            count++;
         }
+        out.println("<h1>Page count is: " + count);
+
     }
 }
