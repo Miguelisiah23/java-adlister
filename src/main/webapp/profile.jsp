@@ -13,6 +13,11 @@
 </head>
 <body>
 <%@include file="partials/navbar.jsp"%>
+<div class="hello">
+    <h1>
+        Hello, User!
+    </h1>
+</div>
 
 </body>
 </html>

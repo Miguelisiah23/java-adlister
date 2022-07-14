@@ -2,28 +2,29 @@ body{
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    align-items: center;
     color: whitesmoke;
     background-image: url("../img/background.jpeg");
     background-size: contain;
-    /*background-repeat: no-repeat;*/
-
 }
 nav{
     border-radius: 2px;
     border-bottom: solid sandybrown 3px;
-    margin-bottom: 5em;
+    margin-bottom: 2.5em;
     width: 100%;
-    /*background: black;*/
+    color: sandybrown;
+}
+nav h1 {
+    font-size: 2em;
+    margin-bottom: 0;
 }
 form{
     display: flex;
     flex-direction: column;
+    align-self: center;
     align-items: center;
-    /*border-radius: 5px;*/
-    /*border: sandybrown solid 3px;*/
     padding: 4em 15em;
-    /*background: black;*/
+    margin-top: 2.5em;
+
 
 }
 input {
@@ -48,4 +49,8 @@ h4{
     margin: 0;
     margin-block-start: 0;
     margin-block-end: 0;
+}
+.hello h1{
+    align-self: start;
+    margin: 0;
 }
