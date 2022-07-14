@@ -1,0 +1,51 @@
+body{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    color: whitesmoke;
+    background-image: url("../img/background.jpeg");
+    background-size: contain;
+    /*background-repeat: no-repeat;*/
+
+}
+nav{
+    border-radius: 2px;
+    border-bottom: solid sandybrown 3px;
+    margin-bottom: 5em;
+    width: 100%;
+    /*background: black;*/
+}
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /*border-radius: 5px;*/
+    /*border: sandybrown solid 3px;*/
+    padding: 4em 15em;
+    /*background: black;*/
+
+}
+input {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1em;
+    border-radius: 5px;
+    background: black;
+    color: floralwhite;
+}
+label{
+    align-self: start;
+}
+button{
+    border-radius: 5px;
+    background: black;
+    color: sandybrown;
+}
+h4{
+    padding: 0;
+    margin: 0;
+    margin-block-start: 0;
+    margin-block-end: 0;
+}
