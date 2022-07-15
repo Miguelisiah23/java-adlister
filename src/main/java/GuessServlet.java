@@ -22,10 +22,13 @@ public class GuessServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse res) throws IOException {
         String random = RandomNumber() + "";
         String num = req.getParameter("num");
+        int numNum = Integer.parseInt(num);
         System.out.println(random);
         System.out.println(num);
         if(num.equalsIgnoreCase(random)){
             res.sendRedirect("/correct?guess=correct");
+        } else if (numNum > 3 || numNum < 1) {
+            res.sendRedirect("/guess");
         } else {
             res.sendRedirect("/incorrect?guess=wrong");
         }
