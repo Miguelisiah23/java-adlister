@@ -10,8 +10,8 @@ import java.util.Random;
 public class GuessServlet extends HttpServlet {
     public static int RandomNumber() {
         Random random = new Random();
-        int oneToThree = random.nextInt(3) + 1 ;
-        return oneToThree;
+        return random.nextInt(3) + 1 ;
+
     }
 
 
