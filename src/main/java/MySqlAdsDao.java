@@ -8,7 +8,7 @@ import java.util.List;
 public class MySqlAdsDao implements Ads {
     private Connection connection = null;
 
-
+// Set up driver connection linked to protected credentials (Config) in constructor
     public MySqlAdsDao() {
         Config config = new Config();
         try {
@@ -27,10 +27,13 @@ public class MySqlAdsDao implements Ads {
     @Override
     public List<Ad> all() {
         try {
+//            Create statement
             Statement stmt = connection.createStatement();
             String query = "SELECT * FROM adlister_db.ads";
+//            Execute statement
             ResultSet rs = stmt.executeQuery(query);
             List<Ad> ads = new ArrayList<>();
+//            Iterate through results object and adding new Ad into List<Ad>
             while (rs.next()) {
                 ads.add(new Ad(
                         rs.getLong("id"),
@@ -43,7 +46,7 @@ public class MySqlAdsDao implements Ads {
             return ads;
 
         } catch (SQLException e) {
-            throw new RuntimeException("Cannot connect to the database", e);
+            throw new RuntimeException("Cannot render all", e);
         }
     }
 
@@ -59,7 +62,7 @@ public class MySqlAdsDao implements Ads {
             }
             return rs.getLong(1);
         } catch (SQLException e) {
-            throw new RuntimeException("not generating", e);
+            throw new RuntimeException("not able to insert", e);
         }
 
 
@@ -68,9 +71,6 @@ public class MySqlAdsDao implements Ads {
     public static void main(String[] args) {
         MySqlAdsDao adsDao = new MySqlAdsDao();
         List<Ad> ads = adsDao.all();
-        System.out.println(ads.size());
-
-
     }
 }
 
