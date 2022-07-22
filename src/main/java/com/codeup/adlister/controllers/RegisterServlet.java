@@ -23,7 +23,6 @@ public class RegisterServlet extends HttpServlet {
         String password = request.getParameter("password");
         String hash = BCrypt.hashpw(password,BCrypt.gensalt());
         String passwordConfirmation = request.getParameter("confirm_password");
-        request.setAttribute("hash",hash);
 
         // validate input
         boolean inputHasErrors = username.isEmpty()
